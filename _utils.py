@@ -1,7 +1,6 @@
-class LinkedList:
-    def __init__(self, value=None, prev=None, next=None):
+class SingleLinkedList:
+    def __init__(self, value=None, next=None):
         self.value = value
-        self.prev = prev
         self.next = next
 
     def __str__(self):
@@ -12,12 +11,21 @@ class LinkedList:
             node = node.next
         return '->'.join(values)
 
+    def remove(self, prev):
+        prev.next = self.next
+
+
+class DoubleLinkedList(SingleLinkedList):
+    def __init__(self, value=None, prev=None, next=None):
+        self.prev = prev
+        SingleLinkedList.__init__(self, value=value, next=next)
+
     def remove(self):
         if self.prev:
             self.prev.next = self.next
             if self.next:
                 self.next.prev = self.prev
-                
+
 
 
 def print_matrix(matrix):
