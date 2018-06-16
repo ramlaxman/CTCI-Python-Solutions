@@ -11,6 +11,12 @@ class SingleLinkedList:
             node = node.next
         return '->'.join(values)
 
+    def tail(self):
+        node = self
+        while node.next:
+            node = node.next
+        return node
+
     def remove(self, prev):
         prev.next = self.next
 
