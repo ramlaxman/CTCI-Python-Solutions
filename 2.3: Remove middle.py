@@ -1,5 +1,7 @@
 from _utils import SingleLinkedList
 
+# Runtime: O(1)
+# Memory: O(1)
 def remove_middle(node):
     # Is not tail
     if node.next:
