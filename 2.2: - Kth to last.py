@@ -1,5 +1,7 @@
 from _utils import SingleLinkedList
 
+# Runtime: O(n)
+# Memory: O(1)
 def kth_from_last(head, k):
     node = head
     runner = node
