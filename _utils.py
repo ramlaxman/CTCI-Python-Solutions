@@ -12,6 +12,13 @@ class LinkedList:
             node = node.next
         return '->'.join(values)
 
+    def remove(self):
+        if self.prev:
+            self.prev.next = self.next
+            if self.next:
+                self.next.prev = self.prev
+                
+
 
 def print_matrix(matrix):
     print('\n'.join(['\t'.join([str(cell) for cell in row]) for row in matrix]))
