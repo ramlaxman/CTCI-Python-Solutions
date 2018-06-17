@@ -1,4 +1,13 @@
 class SingleLinkedList:
+    @classmethod
+    def build(cls, values):
+        head = SingleLinkedList(values[0])
+        node = head
+        for x in values[1:]:
+            node.next = SingleLinkedList(x)
+            node = node.next
+        return head
+
     def __init__(self, value=None, next=None):
         self.value = value
         self.next = next
